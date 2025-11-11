@@ -1,25 +1,38 @@
-候補日ダヨー React 版
+# 候補日ダヨー
 
-開発サーバ
-- npm i
-- npm run dev
+候補日提示を簡単に。がテーマの Web ツールです。
+時間スロットを選択して候補日のテキストを吐き出せます。
 
-wafoo-css の導入（dist をベンダリング）
-- 取得先: https://github.com/nigh2tie/wafoo-css の dist ディレクトリ
-- 配置先: public/vendor/wafoo-css/
-- 読み込み: index.html の <link href="/vendor/wafoo-css/wafoo.min.css"> が参照します
+## サクッと使う URL
 
-自動取得スクリプト（ネットワーク必須）
-- 任意のリファレンス（タグ/ブランチ/コミット）を指定できます。省略時は main。
+https://nigh2tie.github.io/kouhobi-dayo/
 
-  npm run get:wafoo           # main から取得
-  npm run get:wafoo -- v0.1.0 # 例: v0.1.0 タグから取得
+## 開発
 
-注意
-- スクリプトは wafoo.css / wafoo.min.css / wafoo.min.css.map を試行ダウンロードします。存在しない場合はスキップします。
-- ファイル名が異なる場合は index.html のパスを合わせてください。
+```bash
+npm install
+# 開発サーバ起動
+npm run dev
+# ビルド
+npm run build
+```
 
-アクセシビリティ/操作
-- スロットは button 要素で Enter/Space による選択が可能
-- デスクトップ: 左クリックのドラッグで連続選択（右クリック無効化）
-- モバイル: タップ開始→終了の2タップ範囲選択、キャンセル可
+ビルド結果は `dist/` ディレクトリに出力されます。
+
+## 技術スタック
+
+- React 19
+- TypeScript
+- Vite
+- wafoo-css
+- lucide-react
+
+## 機能
+
+- **日次表示**: 1 日の時間スロットを表示・選択
+- **週次表示**: 1 週間の時間スロットを表示・選択
+- **時間範囲設定**: 1 日の表示時間範囲をカスタマイズ可能
+- **時間間隔設定**: 15 分、30 分、60 分から選択可能
+- **テンプレート出力**: 選択した時間をテキスト形式で出力・コピー可能
+
+以上
